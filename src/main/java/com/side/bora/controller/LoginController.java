@@ -14,7 +14,8 @@ public class LoginController {
     /*로그인 페이지*/
     @GetMapping("/login")
     public String login(){
-    System.out.println("로그인 들어왓");
+
+    log.info("로그인 돌아가세요^^");
         return "/user/login";
     }
 }
