@@ -1,0 +1,67 @@
+/* group */
+.function .function-group{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+/* item */
+.function-item{
+    display: inline-block;
+    background-color: #AD8AFE;
+    min-width: 219px;
+    padding: .8rem 1rem .2rem 1rem;
+    text-align: center;
+    border-radius: 25px;
+    position: relative;
+}
+.empty-value{
+    background-color: #B6B6B6 !important;
+}
+.empty-value input{
+    background: repeating-linear-gradient(320deg, #eaeaea, #eaeaea 3px, #fff 0, #fff 13px);
+}
+.function-title{
+    line-height: 1.4;
+}
+.function-title p{
+    margin: 0;
+    font-size: 1.7vw;
+    font-weight: 500;
+    color: white;
+}
+.function-title p.en{
+    color: white;
+    font-size: 1.1vw;
+    margin-bottom: 0.6rem;
+}
+.function-item input.function-input{
+    width: 200px;
+    padding: .2rem .7vw;
+    border: 3px solid #B6B6B6;
+    font-size: 1.4vw;
+    text-align: right;
+}
+.function-item .function-img{
+    cursor: pointer;
+    width: 2.3vw;
+    margin: 0.7rem auto;
+    display: block;
+}
+.checking-documents{
+    position: absolute;
+    min-width: 219px;
+    padding: .8rem 1rem .2rem 1rem;
+    text-align: center;
+    border-radius: 25px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    box-shadow: 0 0 0 7px #ad8afe inset;
+    background-color: #efe8ffab;
+    z-index: 1;
+}

@@ -1,0 +1,147 @@
+.bg-mypage{
+    background-color: #F0EAFF;
+}
+#mypage #sidebar .my-layout{
+    border-radius: 30px;
+    padding: 1.4rem 1.6rem;
+    min-height: 550px;
+}
+#mypage #my-content .my-layout{
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    min-height: 500px;
+}
+#mypage.d-flex div#sidebar{
+    flex: 2;
+}
+#mypage.d-flex div#my-content{
+    flex: 7;
+}
+
+#sidebar ul#mypage-menu{
+    padding: 0;
+    font-size: 1rem;
+}
+#sidebar ul#mypage-menu li{
+    margin: 0.5rem 0;
+
+}
+#sidebar ul#mypage-menu li a{
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.6rem 1rem 0.7rem;
+}
+#sidebar ul#mypage-menu li a:hover, #sidebar ul#mypage-menu li:hover{
+    color: white;
+    background-color: #AD8AFE;
+    border-radius: 15px;
+}
+#sidebar ul#mypage-menu li.checked{
+    background-color: #AD8AFE;
+    border-radius: 15px;
+}
+#sidebar ul#mypage-menu li.checked a{
+    font-size: 1.1rem;
+    color: white;
+}
+#sidebar .sidebar-myInfo .logo-img{
+    width: 45px;
+}
+#sidebar .sidebar-header .my-sub-title{
+    font-size: 1.46rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.55rem;
+}
+#sidebar .sidebar-myInfo .infoText > div{
+    font-size: 1rem;
+}
+/* title */
+#mypage .title h2{
+    font-size: 2.1vw;
+}
+#mypage .title p{
+    font-size: 1.1vw;
+    margin-top: 1rem;
+}
+
+/* accordion */
+#my-accordion th {
+    color: #858585;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+#my-accordion tr.odd td {
+    cursor: pointer;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+#my-accordion tr.odd{
+    border: 1px solid #b1b1b1;
+}
+#my-accordion td {
+    padding: 1rem 0.5rem;
+ }
+
+#my-accordion div.arrow:after {
+    content: '';
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-top: 0.1rem solid #888888;
+    border-right: 0.1rem solid #888888;
+    transform: rotate(133deg);
+}
+#my-accordion div.up {
+    background-position:0px 0px;
+    transform: rotate(181deg);
+    transition: all 1s;
+}
+#my-accordion td.accordion-desc{
+    border: 1px solid #b1b1b1;
+    padding: 3rem;
+}
+label.file-label{
+    cursor: pointer;
+    border: 1px solid;
+    padding: 0.2rem 1.5rem;
+}
+#my-accordion .status{
+    padding: 0.25rem 1.3rem;
+    border-radius: 50px;
+    vertical-align: middle;
+}
+#my-accordion .status.not-sub{
+    background-color: #E6E6E6;
+}
+#my-accordion .status.processing{
+    background-color: #aeffc4;
+}
+#my-accordion .status.hold{
+    background-color: #FFB9B9;
+}
+#my-accordion .status.complete{
+    background-color: #8550FF;
+    color: fff;
+}
+#my-accordion .upload-submit{
+    background-color: #AD8AFE;
+    color: white;
+    border: 1px solid #AD8AFE;
+    padding: 0.2rem 1.5rem;
+}
+#my-accordion .upload-submit:hover{
+background-color: white;
+    color: #AD8AFE;
+}
+#my-accordion .anima{
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.active {
+  /* 높이를 정해줘야지만 transition이 적용됨 */
+  height: 300px;
+}
