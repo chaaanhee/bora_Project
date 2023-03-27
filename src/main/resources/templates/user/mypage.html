@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
+<!-- page css -->
+<link th:href="@{/css/customer/user/mypage.css}" rel="stylesheet"/>
+    <!-- accordion -->
+<!-- page script --> <!-- accordion -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
+<section id="contents" class="bg-mypage py-5r">
+    <div id="mypage" class="inner d-flex justify-content-between gap-5">
+    <!-- Sidebar-->
+    <div id="sidebar">
+        <div class="bg-white my-layout">
+            <div class="sidebar-header">
+                <div class="sidebar-myInfo d-flex gap-2 align-items-center justify-content-center">
+                    <img th:src="@{/img/bora.png}" class="logo-img">
+                    <div class="infoText">
+                        <div class="mt-1">이현지님</div>
+                    </div><!--infoText -->
+                </div><!--sidebar-myInfo-->
+                <div class="my-sub-title">마이페이지</div>
+            </div><!-- sidebar-header -->
+            <ul id="mypage-menu">
+                <li class="my-menu-item"><a th:href="@{/mypage}" >대시보드</a></li>
+                <li class="my-menu-item"><a th:href="@{/mypage}" >개인정보수정</a></li>
+                <li class="my-menu-item checked"><a th:href="@{/mypage}">증빙서류제출</a></li>
+                <li class="my-menu-item"><a th:href="@{/mypage}" >고객문의</a></li>
+                <li class="my-menu-item"><a th:href="@{/mypage}" >로그아웃</a></li>
+            </ul>
+        </div> <!--my-layout-->
+    </div> <!-- sidebar-->
+    <!--sidebar 여기까지-->
+
+    <!-- mypage 본문 -->
+    <div id="my-content">
+        <div class="bg-white my-layout">
+            <div class="title">
+                <h2>증빙서류제출</h2>
+                <p>서류를 제출하시면 더 많은 내용을 알 수 있습니다.</p>
+            </div> <!-- / title -->
+
+
+            <table id="my-accordion" width="100%">
+                <tr>
+                    <th width="10%"></th>
+                    <th width="10%">구분</th>
+                    <th width="20%" align="center">기간(2023년)</th>
+                    <th width="20%" align="center">제출상태</th>
+                    <th width="20%" align="center">제출하기(PDF 파일)</th>
+                    <th width="20%" align="center"></th>
+
+                </tr>
+                <tr>
+                    <td><div class="arrow"></div></td>
+                    <td>기부금</td>
+                    <td>01.01~12.31</td>
+                    <td><span class="status processing">확인중</span></td>
+                    <td>
+                        <div class="upload" style="display:none;">
+                            <label class="file-label" for="file-input1">첨부파일</label>
+                            <input type="file" id="file-input1" style="display:none;">
+                        </div>
+                        <div class="upload-complete">
+                            제출하였습니다.
+                        </div>
+                    </td>
+                    <td><button type="submit" class="upload-submit" style="display:none;">제출하기</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="accordion-desc">
+                        <h4 class="text-center">증빙서류 양식</h4>
+                        <p class="red text-center">서류는 반드시 PDF파일만 가능합니다.</p>
+                        <div class="d-flex gap-3">
+                            <img class="col-6" src="https://yimgf-thinkzon.yesform.com/docimgs/public/1/33/32216/32215712.jpg">
+                            <p class="col-4 p-3">서류 양식 설명<br>설명을 또 해드릴께요</p>
+                        </div>
+                        <p class="text-center">관련 사이트 : <a href="https://www.nps.or.kr/jsppage/nps_gate.jsp" target="_blank">국민연금공단(https://www.nps.or.kr/jsppage/nps_gate.jsp)</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><div class="arrow"></div></td>
+                    <td>의료보험</td>
+                    <td>01.01~12.31</td>
+                    <td><span class="status not-sub">미재출</span></td>
+                    <td>
+                        <div class="upload">
+                        <label class="file-label" for="file-input2">첨부파일</label>
+                        <input type="file" id="file-input2" style="display:none;">
+                        </div>
+                        <div class="upload-complete" style="display:none;">
+                            제출하였습니다.
+                        </div>
+                    </td>
+                    <td><button type="submit" class="upload-submit">제출하기</button></td>
+                </tr>
+                <tr class="anima">
+                    <td colspan="6" class="accordion-desc">
+                        <h4 class="text-center">증빙서류양식</h4>
+                        <p class="red text-center">서류는 반드시 PDF파일만 가능합니다.</p>
+                        <div class="d-flex gap-3">
+                            <img class="col-6" src="https://yimgf-thinkzon.yesform.com/docimgs/public/1/33/32216/32215712.jpg">
+                            <p class="col-4 p-3">서류 양식 설명<br>설명을 또 해드릴께요</p>
+                        </div>
+                        <p class="text-center">관련 사이트 : <a href="https://www.nps.or.kr/jsppage/nps_gate.jsp" target="_blank">국민연금공단(https://www.nps.or.kr/jsppage/nps_gate.jsp)</a></p>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </div><!-- my-layout -->
+    </div><!-- my-content -->
+    </div><!-- inner -->
+
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
+<!-- 페이지 script -->
+<script>
+  $(document).ready(function(){
+
+        $("#my-accordion tr:odd").addClass("odd");
+        $("#my-accordion tr:not(.odd)").hide();
+        $("#my-accordion tr:first-child").show(); //열머리글 보여주기
+
+        $("#my-accordion tr.odd").click(function(){
+            $(this).next("tr").toggle();
+            $(this).find(".arrow").toggleClass("up");
+        });
+    });
+
+
+</script>
+
+</body>
+</html>

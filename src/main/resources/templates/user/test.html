@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
+<!-- page css -->
+<link th:href="@{/css/customer/main-page.css}" rel="stylesheet"/>
+<link th:href="@{/css/customer/main/main-slider.css}" rel="stylesheet"/>
+<!-- page script -->
+<script th:src="@{/js/customer/slider.js}" defer></script>
+</head>
+<body>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
+<section id="contents">
+
+
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
+<!-- 페이지 script -->
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
