@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- page css -->
+<!--<link th:href="@{/css/user/register.css}" rel="stylesheet"/-->
+
+<body>
+<!-- Page Content-->
+  <h1>회원가입</h1>
+  <p>'보라'에 오신것을 환영합니다!</p>
+
+<form action="/user/registerPost" method="post" name="form">
+<!--아이디-->
+  <h5 >아이디</h5>
+  <input type="text"  id="id" name="id" autocapitalize="off" autocomplete="off"
+       placeholder="영문 소문자로 시작, 영문자 또는 숫자 6~20자리로 입력">
+
+<!--비밀번호-->
+  <h5 >비밀번호</h5>
+  <input type="password"  id = "pwd" name="pwd" autocapitalize="off" autocomplete="off"
+       placeholder="영문 대소문자와 숫자 4~12자리로 입력">
+
+<!--이름-->
+  <h5 >이름</h5>
+  <input type="text"   id = "name" name="name" autocapitalize="off" autocomplete="off" placeholder="이름 입력">
+
+<!--주민등록번호-->
+  <h5>주민등록번호</h5>
+  <input type="text"   id ="jumin_no" name="jumin_no"  autocapitalize="off" autocomplete="off" placeholder="-빼고 숫자 입력">
+
+<!--휴대폰-->
+  <h5>휴대폰</h5>
+  <input type="text" id ="mobile" name="mobile"    autocapitalize="off" autocomplete="off" placeholder="010-0000-0000">
+
+<!--주소-->
+  <h5>주소</h5>
+  <div>
+   <input type="text"   id ="index" name="index"  class="postcodify_postcode5"    placeholder="우편번호 검색 ">
+   <button type="button" class="btn btn-primary btn-md px-4 button-request" id="postcodify_search_button"><span>검색</span></button>
+  </div>
+    <span class="input_area"><input type="text"  id ="address" name="address" class="postcodify_address" placeholder="주소 검색"></span>
+  <div>
+    <span class="input_area"><input type="text" id ="DA" name="DA" placeholder="상세주소 입력"></span>
+  </div>
+
+<!--회원가입 완료-->
+  <div>
+    <button type="submit" onclick="fnSubmit(); return false;">회원가입 완료</button>
+  </div>
+</form>
+</body>
+
+
+
+<!--아이디 중복확인-->
+
+
+<!--유효성 검사 시작-->
+<!--주민등록번호 : 주민번호 뒷자리의 첫글자는 1~4만 가능을 넣자-->
+
+<script>
+var path = "${pageContext.request.contextPath }";
+
+    $(document).ready(function () {
+        var msg = "${msg}";
+        if (msg != "") {
+            alert(msg);
+        }
+    });
+
+    function fnSubmit() {
+        var id_rule =/^[a-z]+[a-z0-9]{5,19}$/g;
+        var password_rule = /^[0-9a-zA-Z]{4,12}$/;
+        var phone_rule = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+
+         if (!id_rule.test($("#id").val())) {
+            alert("아이디 형식에 맞게 입력해주세요.");
+             return false;
+
+          }else if ($("#pwd").val() == null || $("#pwd").val() == "") {
+            alert("비밀번호를 입력해주세요.");
+            $("#pwd").focus();
+            return false;
+
+         }else if (!password_rule.test($("#pwd").val())) {
+             alert("비밀번호 형식에 맞게 입력해주세요");
+             return false;
+
+         }else if ($("#name").val() == null || $("#name").val() == "") {
+               alert("이름을 입력해주세요.");
+               $("#name").focus();
+               return false;
+
+         }else if ($("#jumin_no").val() == null || $("#jumin_no").val() == "") {
+             alert("주민등록번호를 입력해주세요.");
+             $("#jumin_no").focus();
+             return false;
+
+         }else if ($("#mobile").val() == null || $("#mobile").val() == "") {
+            alert("휴대폰 번호를 입력해주세요.");
+            $("#mobile").focus();
+            return false;
+
+         }else if (!phone_rule.test($("#mobile").val())) {
+            alert("휴대폰 번호 형식에 맞게 입력해주세요.");
+            return false;
+
+         }else if ($("#address").val() == null || $("#address").val() == "") {
+            alert("주소를 입력해주세요.");
+            $("#address").focus();
+            return false;
+
+        }else {
+               joinInsertForm.action = "/user/registerPost";
+               joinInsertForm.method = "POST";
+               return joinInsertForm.submit();
+             }
+           }
+</script>
+<!--유효성 검사 끝-->
+
+<!--주소 API 시작-->
+<!-- jQuery와 Postcodify를 로딩한다-->
+<script  src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+
+<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다-->
+<script> $(function () {
+  $("#postcodify_search_button").postcodifyPopUp();
+}); </script>
+<!--주소 API 끝-->
+</html>
