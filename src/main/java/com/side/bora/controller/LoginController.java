@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
     /*로그인 페이지*/
     @GetMapping("/login")
-    public String login(){
-    System.out.println("로그인 들어왓");
+    public String login() {
+        System.out.println("로그인 들어왓");
         return "/user/login";
     }
+
+
 }
