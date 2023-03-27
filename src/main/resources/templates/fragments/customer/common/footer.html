@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<footer th:fragment="footer">
+    <div class="Artc_footer">
+        <div class="d-flex justify-content-center">
+            <div class="inner d-flex justify-content-between align-self-start gap-5">
+                <!-- logo-menu start -->
+                <div id="logo-footer">
+                    <a th:href="@{/}" >
+                        <img th:src="@{/img/bora.png}" class="logo-img">
+                        <p class="logo-font" id="footer-logo" th:text="'보라'"></p></a>
+                </div>
+                <!-- logo-menu end -->
+
+                <div id="foot-mid">
+                    <!-- footer-menu start -->
+                    <nav class="footer-menu d-flex justify-space-between align-items-center gap-4 mb-3">
+                        <a th:href="@{/}" class="menu-item">이용약관</a>
+                        <a th:href="@{/}" class="menu-item">개인정보처리방침</a>
+                        <a th:href="@{/}" class="menu-item">사업자정보확인</a>
+                        <a th:href="@{/}" class="menu-item">인재채용</a>
+                        <a th:href="@{/}" class="menu-item">회사소개</a>
+                    </nav>
+                    <!-- footer-menu end -->
+                    <!-- footer-info end -->
+                    <div class="foot-info">
+                        <div class="bundle mb-2">
+                            <span class="part">대표이사 : 이현지</span>
+                            <span class="part">사업자등록번호 : 123-45-67890</span>
+                        </div> <!--/bundle -->
+                        <p class="alert">세종특별자치시 국세청로 8-14 (정부세종2청사 국세청동) 국세청상담센터 국번없이 126</p>
+                    </div><!-- footer-info end -->
+                </div><!-- foot-mid end -->
+
+                <!-- web-site start -->
+                <div class="web-site d-flex flex-column">
+                    <p class="web-site-title" th:text="'관련 사이트'"></p>
+                    <select name="web-site-select" onchange="window.open(value,'_blank');">
+                        <option value="web-site-select" >사이트를 선택해주세요</option>
+                        <optgroup label="그룹001">
+                            <option value="http://kosen21.org">코센(KOSEN)</option>
+                            <option value="https://www.nkis.re.kr:4445">국가정책연구포털(NKIS)</option>
+                            <option value="http://www.eaerweb.org">East Asian Economic Review</option>
+                        </optgroup>
+                        <optgroup label="그룹002">
+                            <option value="http://www.kisti.re.kr">한국과학기술정보연구원</option>
+                            <option value="http://www.nrc.re.kr">경제인문사회연구회</option>
+                            <option value="http://www.kiep.go.kr">대외경제정책연구원</option>
+                        </optgroup>
+                        <option value="http://www.google.com">구글</option>
+                        <option value="http://www.naver.com">네이버</option>
+                        <option value="http://www.daum.net">다음</option>
+                    </select>
+                </div>
+                <!-- web-site end -->
+            </div> <!--inner -->
+        </div><!--artc -->
+        <div class="copyright"><p>Copyright 보라 All Rights Reserved.</p>
+        </div><!-- /Copyright -->
+    </div><!--Artc_footer -->
+</footer>
+
+</html>
