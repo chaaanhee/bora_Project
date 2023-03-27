@@ -49,6 +49,7 @@
     box-shadow: 3px 4px 4px 1px rgb(0 0 0 / 20%);
 }
 #return-table {
+    display:none;
     width: -webkit-fill-available;
     font-size: 1rem;
     border-bottom: 1px solid;
