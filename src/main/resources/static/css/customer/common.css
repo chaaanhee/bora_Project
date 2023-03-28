@@ -9,6 +9,8 @@ body{
     font-weight: 400;
     color: black;
     word-break: break-all;
+    /*header 고정*/
+    padding-top: 6rem;
 }
 ol,
 ul {
@@ -2768,9 +2770,16 @@ textarea.form-control-lg {
 }
 /* header */
 header {
-    margin-top : 1rem;
-    height: 80px;
-    border-bottom: 1px solid #EBEEF2;
+       height: 80px;
+       border-bottom: 1px solid #EBEEF2;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: #fffffff2;
+       padding-top: 1rem;
+       transition: top 0.2s ease-in-out;
+       z-index: 999;
 }
 .logo-font {
     font-family: 'Black Han Sans', sans-serif !important;
@@ -2879,6 +2888,19 @@ footer .web-site select:after{
     font-size: 1.3rem;
 }
 .white-btn:hover{
-background-color: #AD8AFE;
-color: white;
+    background-color: #AD8AFE;
+    color: white;
+}
+.purple-btn{
+    border: 3px solid #AD8AFE;
+    background-color: #AD8AFE;
+    color: white;
+    width: 400px;
+    height: 68px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+}]
+.purple-btn:hover{
+    background-color: white;
+    color: #AD8AFE;
 }
