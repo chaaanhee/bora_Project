@@ -1,11 +1,152 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보라</title>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
+<!-- page css -->
+<link th:href="@{/css/customer/main/main-page.css}" rel="stylesheet"/>
+<link th:href="@{/css/customer/main/function.css}" rel="stylesheet"/>
+<link th:href="@{/css/customer/main/main-slider.css}" rel="stylesheet"/>
+<link th:href="@{/css/customer/main/news-slider.css}" rel="stylesheet"/>
+<!-- page script -->
+<script th:src="@{/js/customer/main-slider.js}" defer></script>
+<script th:src="@{/js/customer/news-slider.js}" defer></script>
 </head>
 <body>
-<p th:text="보라팀"></p>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
+<section id="contents">
+
+    <div id="main-slider">
+        <div class="slider-wrap">
+            <div class="cont"><img onclick="javascript:location.href='/';" class="cursor" th:src="@{/img/banner/bora-main-banner01.png}"></div>
+            <div class="cont"><img onclick="javascript:location.href='/';" class="cursor" th:src="@{/img/banner/bora-main-banner02.png}"></div>
+            <div class="cont"><img onclick="javascript:location.href='/';" class="cursor" th:src="@{/img/banner/bora-main-banner03.png}"></div>
+            <div class="cont"><img onclick="javascript:location.href='/';" class="cursor" th:src="@{/img/banner/bora-main-banner04.png}"></div>
+            <div class="cont"><img onclick="javascript:location.href='/';" class="cursor" th:src="@{/img/banner/bora-main-banner05.png}"></div>
+            <div class="cont"><img onclick="javascript:location.href='/';" class="cursor" th:src="@{/img/banner/bora-main-banner06.png}"></div>
+        </div> <!-- /slider-wrap -->
+    </div> <!-- /main-slider -->
+
+    <!-- tax-function start -->
+    <div id="main-function" class="inner pt-7">
+        <div class="title">
+            <h2>이현지님의 연말정산</h2>
+            <p>정확하게 알고가자 친절하게 설명해줄께</p>
+        </div> <!-- / title -->
+
+        <!-- basic tax start-->
+        <div class="function">
+            <div class="function-group">
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'999,999'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'999,999'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'999,999'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'999,999'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+            </div> <!--function-group -->
+            <div class="function-group">
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'999,999'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'999,999'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+                <div class="function-item">
+                    <div class="function-title"><p>국민연금</p><p class="en">(Donation)</p></div>
+                    <input type="text" class="function-input" th:value="'0'"
+                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" readonly/>
+                    <div class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></div>
+                </div> <!-- function-item -->
+            </div> <!-- function-group -->
+        </div> <!-- function -->
+        <!-- basic tax end-->
+
+        <div id="btn-area">
+            <button class="white-btn" onclick="javascript:location.href='/tax/return';" type="button">더 보기</button>
+        </div><!--btn area -->
+    </div> <!-- /main-function -->
+    <!-- tax-function end -->
+
+    <!-- use video start -->
+    <div id="use-video" class="inner pt-7">
+        <div class="title">
+            <h2>‘보라’ 이렇게 사용하는거야</h2>
+            <p>친절하게 동영상까지 보여주니까 잘 배워두세요</p>
+        </div> <!-- / title -->
+        <div class="player text-center">
+            <video controls width="780" loop autoplay muted>
+                <source th:src="@{/media/gyemoim_int.mp4}" type="video/mp4">
+            </video>
+        </div><!--/ player -->
+    </div> <!--/ use-video -->
+    <!-- use video end -->
+
+    <!-- bora advertisement start -->
+    <div id="advertisement" class="pt-7">
+        <div class="adv-content">
+            <a href="/">
+                <div class="adv-image adv-1"></div>
+                <div class="adv-desc">
+                    <div class="title">
+                        <h2 class="white">‘보라’ 이렇게 사용하는거야</h2>
+                        <p>친절하게 동영상까지 보여주니까 잘 배워두세요</p>
+                        <img th:src="@{/img/bora.png}" class="logo-img">
+                    </div> <!-- / title -->
+                </div><!-- adv-desc -->
+            </a>
+        </div><!--/ main-content-->
+    </div> <!--/ advertisement -->
+    <!-- bora advertisement end -->
+
+    <!-- bora news start -->
+    <div id="bora-news" class="py-7">
+        <div class="title">
+            <h2>세금 관련 정보 뉴스 섹션</h2>
+            <p>정확하게 알고가자 친절하게 설명해줄께</p>
+        </div> <!-- / title -->
+        <th:block th:replace="~{/fragments/customer/main/news-slider :: news-slider}"></th:block>
+
+    </div><!--/ bora-news-->
+    <!-- bora news end -->
+
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
+<!-- 페이지 script -->
+<script>
+// let functionDiv = document.querySelectorAll('.')
+</script>
+
 </body>
 </html>

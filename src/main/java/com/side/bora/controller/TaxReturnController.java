@@ -7,19 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("tax")
 @Log4j2
 @RequiredArgsConstructor // 생성자 주입
-public class LoginController {
+public class TaxReturnController {
     /*로그인 페이지*/
-    @GetMapping("/login")
-
-    public String login(){
-
-        System.out.println("로그인 들어왓");
-
-        return "/user/login";
+    @GetMapping("/return")
+    public String taxReturn(){
+    System.out.println("메인기능 들어왓");
+        return "/tax/taxReturn";
     }
-
-
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="header">
+    <div class="Artc_header">
+        <div class="artc d-flex justify-content-center">
+            <div class="inner d-flex justify-content-between">
+                <!-- logo-menu start -->
+                <div id="logo-header">
+                    <a th:href="@{/}" >
+                        <img th:src="@{/img/bora.png}" class="logo-img">
+                        <h1 class="logo-font" id="site-logo" th:text="'보라'"></h1></a>
+                </div>
+                <!-- logo-menu end -->
+                <!-- main-menu start -->
+                <nav class="main-menu d-flex justify-space-between align-items-center gap-4">
+                    <a th:href="@{/}" class="menu-item">조회/발급</a>
+                    <a th:href="@{/}" class="menu-item">민원증명</a>
+                    <a th:href="@{/}" class="menu-item">신청/제출</a>
+                    <a th:href="@{/}" class="menu-item">신고/납부</a>
+                    <a th:href="@{/}" class="menu-item">상담/제보</a>
+                </nav>
+                <!-- main-menu end -->
+                <!-- Customer-menu start -->
+                <nav class="customer-menu d-flex align-items-center gap-3">
+                    <!-- search start
+                    <form method="get" action="/search" class="form-search">
+                        <div class="flex search-border">
+                            <input type="search" name="q" aria-label="검색어 입력란" class="inpt-search">
+                            <button type="submit" class="btn-search">검색</button>
+                        </div>
+                    </form>
+                    search end -->
+                    <a href="/login" class="menu-item">로그인</a>
+                    <a href="/register" class="menu-item">회원가입</a>
+                </nav>
+                <!-- Customer  end -->
+            </div> <!--inner -->
+        </div><!--artc -->
+    </div><!--Artc_header -->
+</header>
+
+</html>

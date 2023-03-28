@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
+<!-- page css -->
+<link th:href="@{/css/customer/main/function.css}" rel="stylesheet"/>
+<link th:href="@{/css/customer/tax/return.css}" rel="stylesheet"/>
+
+<!-- page script -->
+
+</head>
+<body>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
+<section id="contents">
+    <div class="inner py-7">
+        <!-- tax-function start -->
+        <div id="main-function">
+            <div class="title pb-4">
+                <h2>이현지님의 연말정산</h2>
+                <p>정확하게 알고가자 친절하게 설명해줄께</p>
+            </div> <!-- / title -->
+            <div id="btn-area" class="pb-4">
+                <button class="white-btn" onclick="javascript:location.href='/login';" type="button">세액 계산하기</button>
+            </div><!--btn area -->
+
+            <!-- 날짜 선택 start-->
+            <div id="select-date" class="my-4">
+                <form>
+                    <fieldset>
+                        <p><span class="red required-mark">*</span>귀속년도 : </p>
+                        <p class="year">2023년</p>
+                        <p><input type="checkbox" name="month1" class="month"> <label>1월</label></p>
+                        <p><input type="checkbox" name="month2" class="month"> <label>2월</label></p>
+                        <p><input type="checkbox" name="month3" class="month"> <label>3월</label></p>
+                        <p><input type="checkbox" name="month4" class="month"> <label>4월</label></p>
+                        <p><input type="checkbox" name="month5" class="month"> <label>5월</label></p>
+                        <p><input type="checkbox" name="month6" class="month"> <label>6월</label></p>
+                        <p><input type="checkbox" name="month7" class="month"> <label>7월</label></p>
+                        <p><input type="checkbox" name="month8" class="month"> <label>8월</label></p>
+                        <p><input type="checkbox" name="month9" class="month"> <label>9월</label></p>
+                        <p><input type="checkbox" name="month10" class="month"> <label>10월</label></p>
+                        <p><input type="checkbox" name="month11" class="month"> <label>11월</label></p>
+                        <p><input type="checkbox" name="month12" class="month"> <label>12월</label></p>
+                        <p class="all"><input type="checkbox" id="checkAll" name="checkAll" class="checkAll"
+                                              style="display:none;">
+                            <label for="checkAll">전체선택 / 전체해제</label>
+                        </p>
+                        <button type="submit" class="month-search">검색하기</button>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- 날짜 선택 end-->
+
+            <!-- basic tax start -->
+            <div class="function py-4">
+                <div class="function-group">
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'999,999'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'999,999'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'999,999'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'0'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+                </div> <!--function-group -->
+
+                <div class="function-group">
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'999,999'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'999,999'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+
+                    <div class="function-item">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input type="text" class="function-input" th:value="'999,999'" readonly="readonly"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+                </div> <!-- function-group -->
+            </div> <!-- function -->
+            <!-- basic tax end -->
+
+            <!-- add tax start -->
+            <div class="title">
+                <p class="thin">증빙서류는 클릭하면 넘어간다</p>
+                <p>증빙서류 제출하려면 클릭하세요</p>
+            </div> <!-- / title -->
+
+            <div class="function py-4">
+                <div class="function-group">
+                    <div class="function-item empty-value">
+                        <div class="function-title"><p>국민연금</p>
+                            <p class="en">(Donation)</p></div>
+                        <input id="test" type="text" class="function-input" th:value="'0'"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                               readonly="readonly"/>
+                        <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                    </div> <!-- function-item -->
+
+                    <div class="not-submitted">
+                        <div class="checking-documents">담당자<br>확인중</div>
+                        <div class="function-item empty-value">
+                            <div class="function-title"><p>국민연금</p>
+                                <p class="en">(Donation)</p></div>
+                            <input type="text" class="function-input" th:value="'0'"
+                                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                   readonly="readonly"/>
+                            <a class="function-img"><img th:src="@{/img/icon/ic-function-img.png}"></a>
+                        </div> <!-- function-item -->
+                    </div> <!-- not-submitted -->
+
+                </div> <!--function-group -->
+            </div> <!-- function -->
+            <!-- add tax end -->
+            <div class="desc">
+                <p class="text-center">※ 연말정산간소화 자료는 소득 · 세액공제 증명서류 발급기관이 제출한 자료를 그대로 보여주는 것이므로 공제요건은 근로자가 확인해야 합니다.</p>
+            </div>
+
+        </div> <!-- /main-function -->
+        <!-- tax-function end -->
+
+        <!-- tax table start -->
+        <div class="tax-detail my-5 p-5">
+            <div class="title text-start">
+                <p class="thin text-300">연말정산 기본내역</p>
+            </div>
+            <table id="return-table" class="my-4">
+                <colgroup>
+                    <col width="30%"/>
+                    <col width="40%"/>
+                    <col width="30%"/>
+                </colgroup>
+                <thead class="text-center">
+                <tr>
+                    <th>날짜</th>
+                    <th>종류</th>
+                    <th>공제대상금액</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>2023.10.23</th>
+                    <td>세븐일레븐 강남점</td>
+                    <td>99,000</td>
+                </tr>
+                <tr>
+                    <th>2023.10.23</th>
+                    <td>올리브영 역삼점</td>
+                    <td>99,000</td>
+                </tr>
+                <tr>
+                    <th>2023.10.23</th>
+                    <td>블루보틀 역삼점</td>
+                    <td>99,000</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>전체합계</th>
+                    <td>총 3개</td>
+                    <td>127,898,765 원</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><span>선택합계</span><span class="red">127,898,765 원</span></td>
+                </tr>
+                </tfoot>
+            </table>
+
+        </div>
+        <!-- tax table end -->
+
+
+    </div><!-- inner -->
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
+<!-- 페이지 script -->
+<script type="text/javascript">
+    //날짜 전체선택
+    $(document).ready(function () {
+        $('.checkAll').click(function () {
+            $('.month').prop('checked', this.checked);
+        });
+    });
+
+</script>
+
+// 돋보기 클릭시에 테이블 보여주는거
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    let functionImg = document.querySelectorAll('.function-img');
+    const test = document.getElementById('test');
+
+    functionImg.forEach((item) => {
+
+        item.addEventListener('click', () => {
+            if (item.previousElementSibling.defaultValue == 0) {
+                //defaultValue값이 0이면 서류제출하는 마이페이지로 넘어가게하는 js
+                //previousElementSibling 은 그 전 노드값의 밸류를 가져와주는거임.
+                let chk = confirm('서류를 제출하시겠습니까?');
+                    if (chk==true){
+                        location.href = 'http://localhost:8080/mypage';
+                    }
+                    else{return;}
+            }
+            else
+                console.log("else값 돌아가니?");
+                    $('.tax-detail').css('display', 'block');
+                    $('#return-table').css('display', 'block');
+                });
+
+        });
+    /*]]>*/
+</script>
+
+</body>
+</html>

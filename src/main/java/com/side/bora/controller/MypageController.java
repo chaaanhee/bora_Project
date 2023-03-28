@@ -10,16 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 @Log4j2
 @RequiredArgsConstructor // 생성자 주입
-public class LoginController {
+public class MypageController {
     /*로그인 페이지*/
-    @GetMapping("/login")
-
-    public String login(){
-
-        System.out.println("로그인 들어왓");
-
-        return "/user/login";
+    @GetMapping("/mypage")
+    public String mypage(){
+    System.out.println("마이페이지 들어왓");
+        return "/user/mypage";
     }
-
-
 }
