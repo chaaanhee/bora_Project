@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
+<!-- page css -->
+<link th:href="@{/css/customer/tax/result.css}" rel="stylesheet"/>
+<!-- page script -->
+
+</head>
+<body>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
+<section id="contents">
+    <div class="inner py-7">
+        <div class="title pb-4">
+            <h2>이현지님의 결과페이지</h2>
+            <p>간편한 연말정산</p>
+        </div> <!-- / title -->
+
+        <!-- tax table(salary) start -->
+        <div id="salary" class="tax-detail my-5 p-5">
+            <div class="title text-start">
+                <p class="thin text-300">급여 및 예상세액</p>
+                <p class="salary-warning">※ 총급여와 기납부세액은 회사가 근로자 기초자료를 등록한 경우에 보이며, 등록하지 않은 경우 직접입력 하여야 합니다.</p>
+                <p class="salary-warning">※ 총급여를 입력하면 나머지는 자동으로 표시됩니다.</p>
+            </div>
+            <table id="result-table" class="my-4">
+                <colgroup>
+                    <col width="30%" />
+                    <col width="20%" />
+                    <col width="30%" />
+                    <col width="20%" />
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>① 총급여 <span class="required-mark">＊</span></th>
+                    <td colspan="3">
+                        <form>
+                            <div id="salary-input" class="d-flex col-10 gap-3 mx-auto">
+                                <input type="text" class="form-control" th:value="'999,999'"
+                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                                <button type="submit" class="salary-btn">입력하기</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>② 근로소득금액</th>
+                    <td>99,999,999</td>
+                    <th>③ 과세표준</th>
+                    <td>99,000</td>
+
+                </tr>
+                <tr>
+                    <th>④ 산출세액</th>
+                    <td>99,999,999</td>
+                    <th>⑤ 결정세액</th>
+                    <td>99,999,999</td>
+
+                </tr>
+                <tr>
+                    <th>⑥ 기납부 소득세액 (먼저 낸 세금)</th>
+                    <td>99,999,999</td>
+                    <th>⑦ 차감징수납부(환급) 예상세액(⑤-⑥)</th>
+                    <td>99,000</td>
+
+                </tr>
+                </tbody>
+            </table>
+            <p class="salary-warning">※ 기납부 소득세액이란 올해 회사를 통해 매월 납부한 소득세를 말합니다. (지방소득세 제외)</p>
+        </div>
+        <!-- tax table(salary) end -->
+
+        <div id="deduction" class="d-flex gap-5">
+            <div id="income-deduction" class="tax-detail my-5 p-4">
+                <div class="title text-start">
+                    <p class="thin text-300">소득공제</p>
+                </div>
+                <table id="income-table" class="my-4" width="100%">
+                    <colgroup>
+                        <col width="40%" />
+                        <col width="30%" />
+                        <col width="30%" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>공제항목명</th>
+                        <th>사용금액</th>
+                        <th>소득공제액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="mainCategory">
+                        <th>인적공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>기본 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>추가 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="mainCategory">
+                        <th>연금보험료 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="mainCategory">
+                        <th>특별소득 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>건강보험료 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>주택자금 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="mainCategory">
+                        <th>신용카드 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>전통시장 사용분</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>대중교통 사용분</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>문화생활 사용분</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>신용카드 사용분</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th><p>합계</p></th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div> <!--income-deduction -->
+            <!-- tax table(income-deduction) end -->
+
+            <div id="credit-deduction" class="tax-detail my-5 p-4">
+                <div class="title text-start">
+                    <p class="thin text-300">세액공제</p>
+
+                </div>
+                <table id="credit-table" class="my-4" width="100%">
+                    <colgroup>
+                        <col width="40%" />
+                        <col width="30%" />
+                        <col width="30%" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>공제항목명</th>
+                        <th>사용금액</th>
+                        <th>소득공제액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="mainCategory">
+                        <th>근로소득세액공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="mainCategory">
+                        <th>특별세액공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>일반보험료 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>의료비 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="subCategory">
+                        <th>교육비 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    <tr class="mainCategory">
+                        <th>월세액 공제</th>
+                        <td>99,999</td>
+                        <td>99,999</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th><p>합계</p></th>
+                            <td>99,999</td>
+                            <td>99,999</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div> <!--credit-deduction -->
+            <!-- tax table(credit-deduction) end -->
+
+        </div><!-- deduction -->
+
+        <div class="scroll-prompt" scroll-prompt="" ng-show="showPrompt" style="opacity: 1;">
+            <div class="scroll-prompt-arrow-container">
+                <div class="scroll-prompt-arrow"><div></div></div>
+                <div class="scroll-prompt-arrow"><div></div></div>
+            </div>
+        </div>
+
+
+        <div id="tax-result" class="d-flex gap-5">
+            <div id="refunds-text-area" class="my-5 p-4">
+                <div class="title pb-5">
+                    <h2>간편한 연말정산 결과</h2>
+                </div> <!-- / title -->
+                <div class="character d-flex align-items-center flex-column">
+                    <div class="talk slide-left text-center">
+                        <span class="text">안타깝네요<br>공제금액을 내주셔야 합니다.</span>
+                    </div>
+                    <img th:src="@{/img/bora.png}">
+                </div>
+
+            </div> <!--refunds-text-area -->
+            <!-- tax table(income-deduction) end -->
+
+            <div id="refunds-result" class="tax-detail my-5 p-4">
+                <div class="title text-start">
+                    <p class="thin text-300">납부 환급 세액</p>
+
+                </div>
+                <table id="refunds-table" class="my-4" width="100%">
+                    <colgroup>
+                        <col width="40%" />
+                        <col width="60%" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>공제항목명</th>
+                        <th>금액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>결정세액</th>
+                        <td>99,999</td>
+                    </tr>
+                    <tr>
+                        <th>기납부세액</th>
+                        <td>99,999</td>
+                    </tr>
+                    <tr>
+                        <th>차감징수세액</th>
+                        <td>99,999</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th><p>합계</p></th>
+                        <td>99,999</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div> <!--refunds-result -->
+            <!-- tax table(refunds-result) end -->
+
+        </div><!-- tax-result -->
+
+        <div id="btn-area" class="pt-5">
+            <button class="purple-btn" onclick="javascript:location.href='/tax/return';" type="button">인쇄하기 (PDF파일)</button>
+        </div><!--btn area -->
+
+    </div><!--inner-->
+
+
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
+<!-- 페이지 script -->
+<script>
+
+</script>
+
+
+</body>
+</html>
