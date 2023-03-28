@@ -1,8 +1,121 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
+<!-- page css -->
+<link th:href="@{/css/customer/user/login.css}" rel="stylesheet"/>
+<!-- page script -->
+</head>
 
 
 <body>
-<p th:text="'보라팀 로그인'">test!</p>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
+<!-- Page Content-->
+<section id="contents">
+    <div  class="inner d-flex py-7  gap-1 title"  style="align-items: center;  justify-content: center;">
+        <div>
+            <img src="/img/character/bora_love.png" class="logo-img">
+        </div>
+        <div>
+            <h1>로그인</h1>
+        </div>
+    </div>
+     <div class="inner py-4 d-flex gap-5">
+
+         <!-- title 구분 -->
+         <!-- title1 -->
+         <div class="title-flex-a">
+             <div class="title" >
+                <h3>일반 로그인</h3>
+            </div>
+                 <div class="title-flex-b" >
+                      <fieldset >
+                             <form action="/user/login" method="post" name="form">
+
+                                <!--아이디-->
+                               <div class="sub-margin2">
+                               <h5 >아이디</h5>
+                              <input  class ="form-login" type="text"  id="id" name="id">
+                               </div>
+
+                                 <!--비밀번호-->
+                                <div class="sub-margin2">
+                                <h5 >비밀번호</h5>
+                                 <input  class ="form-login" type="password"  id = "pwd" name="pwd">
+                                </div>
+                                     <!--자동로그인 및 찾기 시작-->
+                                              <!--자동로그인-->
+                                                <div class="d-flex sub-margin1"  style="gap:10rem; ">
+                                                        <p >
+                                                            <input id="remEmail" name="useCookie" type="checkbox"/>
+                                                            <label for="remEmail">자동 로그인</label>
+                                                        </p>
+                                                    <!--이메일 및 비밀번호 찾기-->
+                                                  <div class="find"  style=" margin-left : auto;">
+                                                    <table>
+                                                        <tr style="display: table-row;  margin-left : auto;">
+                                                           <td align="right"><a href="<%=request.getContextPath()%>/member/findEmail" class="find-font">이메일 찾기</a></td>
+                                                            <td align="right" > <p class="find-font"> / </p></td>
+                                                            <td align="right"> <a href="<%=request.getContextPath()%>/member/findPwd" class="find-font">비밀번호 찾기</a></td>
+                                                        </tr>
+                                                    </table>
+                                                 </div><!--이메일 및 비밀번호 찾기 끝-->
+                                                 </div><!--자동로그인 및 찾기 끝-->
+
+                        <!--로그인 버튼-->
+                        <div class="sub-margin2">
+                            <button class="purple-btn" type="submit" onclick="">로그인</button>
+                        </div><!--btn area -->
+
+                        <!--회원가입 버튼-->
+                        <div class="sub-margin2">
+                            <button class="white-btn" type="submit" onclick="/register">회원가입하기</button>
+                        </div><!--btn area -->
+
+                 </form>
+            </fieldset>
+            </div>
+         </div><!--title1 끝-->
+
+            <!-- title2 -->
+            <div class="title-flex-a">
+                <div class="title" >
+                <h3>간편로그인</h3>
+                </div>
+                <!--flex2-->
+                <div class="title-flex-b" >
+                <fieldset>
+                    <!--카카오톡 버튼-->
+                    <div class="sub-margin2">
+                        <button class="kakao-btn" >카카오톡 로그인</button>
+                    </div><!--btn area -->
+
+                    <!--네이버 버튼-->
+                    <div class="sub-margin1">
+                        <button class="naver-btn" >네이버 로그인</button>
+                    </div><!--btn area -->
+
+                    <!--구글 버튼-->
+                    <div class="sub-margin1">
+                        <button class="google-btn" >구글 로그인</button>
+                    </div><!--btn area -->
+                     </fieldset>
+                </div><!--flex2끝-->
+            </div><!-- title2 끝 -->
+
+
+         <!-- title 구분 -->
+
+    </div> <!-- inner -->
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
 </body>
 </html>

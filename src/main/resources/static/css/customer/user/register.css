@@ -1,0 +1,25 @@
+.main-margin{
+    margin: 0 auto;
+}
+
+.sub-margin{
+    margin-top: 2rem;
+}
+.sub-margin1{
+    margin-top: 1rem;
+}
+.sub-margin3{
+    margin-top: 3rem;
+}
+.button-search{
+    background-color: white;
+    flex: 1;
+    border: 3px solid #AD8AFE;
+    border-radius: 50px;
+    color: #AD8AFE;
+}
+
+.button-search:hover{
+background-color: #AD8AFE;
+color: white;
+}
