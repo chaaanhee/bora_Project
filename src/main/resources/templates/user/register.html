@@ -1,55 +1,91 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
+<!-- head -->
+<th:block th:replace="~{/fragments/customer/common/head :: head}"></th:block>
 <!-- page css -->
-<!--<link th:href="@{/css/user/register.css}" rel="stylesheet"/-->
+<link th:href="@{/css/customer/user/register.css}" rel="stylesheet"/>
+<!-- page script -->
+</head>
+
 
 <body>
+<!-- header -->
+<th:block th:replace="~{/fragments/customer/common/header :: header}"></th:block>
+
 <!-- Page Content-->
-  <h1>회원가입</h1>
-  <p>'보라'에 오신것을 환영합니다!</p>
+<section id="contents">
+    <div class="inner py-7">
+        <div class="col-5 col-sm-12 main-margin">
+            <!-- / title -->
+            <div class="title" >
+                <h1>회원가입</h1>
+                <p>'보라'에 오신것을 환영합니다!</p>
+            </div>
 
-<form action="/user/registerPost" method="post" name="form">
-<!--아이디-->
-  <h5 >아이디</h5>
-  <input type="text"  id="id" name="id" autocapitalize="off" autocomplete="off"
-       placeholder="영문 소문자로 시작, 영문자 또는 숫자 6~20자리로 입력">
+            <form action="/user/registerPost" method="post" name="form">
 
-<!--비밀번호-->
-  <h5 >비밀번호</h5>
-  <input type="password"  id = "pwd" name="pwd" autocapitalize="off" autocomplete="off"
-       placeholder="영문 대소문자와 숫자 4~12자리로 입력">
+                <!--아이디-->
+                <div class="sub-margin">
+                <h5 >아이디</h5>
+                     <input  class ="form-control" type="text"  id="id" name="id" autocapitalize="off" autocomplete="off"
+                        placeholder="영문 소문자로 시작, 영문자 또는 숫자 6~20자리로 입력">
+                </div>
 
-<!--이름-->
-  <h5 >이름</h5>
-  <input type="text"   id = "name" name="name" autocapitalize="off" autocomplete="off" placeholder="이름 입력">
+                <!--비밀번호-->
+                <div class="sub-margin">
+                <h5 >비밀번호</h5>
+                    <input  class ="form-control" type="password"  id = "pwd" name="pwd" autocapitalize="off" autocomplete="off"
+                       placeholder="영문 대소문자와 숫자 4~12자리로 입력">
+                </div>
 
-<!--주민등록번호-->
-  <h5>주민등록번호</h5>
-  <input type="text"   id ="jumin_no" name="jumin_no"  autocapitalize="off" autocomplete="off" placeholder="-빼고 숫자 입력">
+                <!--이름-->
+                <div class="sub-margin">
+                <h5 >이름</h5>
+                <input class ="form-control"  type="text"   id = "name" name="name" autocapitalize="off" autocomplete="off" placeholder="이름 입력">
+                </div>
 
-<!--휴대폰-->
-  <h5>휴대폰</h5>
-  <input type="text" id ="mobile" name="mobile"    autocapitalize="off" autocomplete="off" placeholder="010-0000-0000">
+                <!--주민등록번호-->
+                <div class="sub-margin">
+                <h5>주민등록번호</h5>
+                <input class ="form-control"  type="text"   id ="jumin_no" name="jumin_no"  autocapitalize="off" autocomplete="off" placeholder="-빼고 숫자 입력">
+                </div>
 
-<!--주소-->
-  <h5>주소</h5>
-  <div>
-   <input type="text"   id ="index" name="index"  class="postcodify_postcode5"    placeholder="우편번호 검색 ">
-   <button type="button" class="btn btn-primary btn-md px-4 button-request" id="postcodify_search_button"><span>검색</span></button>
-  </div>
-    <span class="input_area"><input type="text"  id ="address" name="address" class="postcodify_address" placeholder="주소 검색"></span>
-  <div>
-    <span class="input_area"><input type="text" id ="DA" name="DA" placeholder="상세주소 입력"></span>
-  </div>
+                <!--휴대폰-->
+                <div class="sub-margin">
+                <h5>휴대폰</h5>
+                <input class ="form-control"  type="text" id ="mobile" name="mobile"    autocapitalize="off" autocomplete="off" placeholder="010-0000-0000">
+                </div>
 
-<!--회원가입 완료-->
-  <div>
-    <button type="submit" onclick="fnSubmit(); return false;">회원가입 완료</button>
-  </div>
-</form>
-</body>
+                <!--주소-->
+                <div class="sub-margin">
+                <h5>주소</h5>
+                <div class="d-flex sub-margin1"  style="gap:1rem; " >
+                <input   type="text"   id ="index" name="index"  class="form-control postcodify_postcode5" style="flex: 3;" placeholder="우편번호 ">
+                <button  class="button-search"   type="button"  id="postcodify_search_button"><span>검색</span></button>
+                </div>
+                <span class="input_area sub-margin1"><input  type="text"  id ="address" name="address" class="sub-margin1 form-control postcodify_address" placeholder="주소"></span>
+                <div class="sub-margin1">
+                    <span class="input_area"><input class ="form-control"  type="text" id ="DA" name="DA" placeholder="상세주소 입력"></span>
+                </div>
+                </div>
+
+                <!--회원가입 완료-->
+                <div class="sub-margin3">
+                    <button class="white-btn" type="submit" onclick="fnSubmit(); return false;">회원가입 완료</button>
+                </div><!--btn area -->
+
+            </form>
+        </div> <!-- col-5 -->
+    </div> <!-- inner -->
+</section>
+
+<!-- footer -->
+<div id="footer">
+    <th:block th:replace="~{/fragments/customer/common/footer :: footer}"></th:block>
+</div>
+
+
 
 
 
@@ -130,4 +166,5 @@ var path = "${pageContext.request.contextPath }";
   $("#postcodify_search_button").postcodifyPopUp();
 }); </script>
 <!--주소 API 끝-->
+</body>
 </html>
